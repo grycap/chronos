@@ -12,5 +12,6 @@ apt-get clean && \
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY entrypoint.sh /
+COPY log4j.properties /
 
 ENTRYPOINT ["/entrypoint.sh"]

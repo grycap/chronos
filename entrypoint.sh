@@ -18,6 +18,10 @@ if [ -n "$SECRET" ]; then
     CMD="$CMD --mesos_authentication_principal $PRINCIPAL --mesos_authentication_secret_file /tmp/secret"
 fi
 
+# Override logging
+mkdir -p /var/log/chronos
+CMD="$CMD -Dlog4j.configuration=file:///log4j.properties"
+
 echo $CMD
 
 if [ $# -gt 0 ]; then
